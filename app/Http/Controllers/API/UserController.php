@@ -43,7 +43,7 @@ class UserController extends Controller
     
 
     public function register(Request $request)
-    {
+    { 
         try{
         $validator = Validator::make($request->all(), [
             'name' => 'required',
