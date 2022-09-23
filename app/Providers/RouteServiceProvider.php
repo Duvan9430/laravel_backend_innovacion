@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 class RouteServiceProvider extends ServiceProvider
 {
   
+ 
 
     /**
      * The path to the "home" route for your application.
@@ -24,6 +25,9 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
+ 
+    
     public function boot()
     {
         $this->configureRateLimiting();
