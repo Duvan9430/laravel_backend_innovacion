@@ -86,7 +86,6 @@ class UserController extends Controller
 
 
     public function logout(Request $request){
-        dd("aa");
         try {
             DB::table('oauth_access_tokens')
             ->where('user_id', $request->user()->id)

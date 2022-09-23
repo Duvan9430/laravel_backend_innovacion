@@ -16,6 +16,10 @@ use App\Http\Controllers\API\UserController;
 |
 */
 
+Route::post('/register', [ App\Http\Controllers\API\UserController::class, 'register']);
+Route::post('/login', [ App\Http\Controllers\API\UserController::class, 'login']);
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return Auth::user();
 });
@@ -23,23 +27,21 @@ Route::get('users', function(){
     return User::all();
 });
 
-
-//Route::post('/register', [ App\Http\Controllers\API\UserController::class, 'register']);
-//Route::post('/login', [ App\Http\Controllers\API\UserController::class, 'login']);
-//Route::post('/login', [ App\Http\Controllers\API\UserController::class, 'login']);
-/*Route::post('logout',  [ App\Http\Controllers\API\UserController::class, 'logout'])->middleware('auth');
 Route::middleware('auth:api')->prefix('profile')->group(function () {
-    Route::get('logout',[ App\Http\Controllers\API\UserController::class, 'logout'])->middleware('auth:api');
-  // Route::post('/logout', [ App\Http\Controllers\API\UserController::class, 'logout'])->middleware('auth:api');
-});*/
+    Route::get('user/logout', [ App\Http\Controllers\API\UserController::class, 'logout'])->middleware('auth');
+});
+
+/* REFERENCIAS no borrar
 Route::group(['prefix' => 'auth'], function ()  {
     Route::post('/register', [ App\Http\Controllers\API\UserController::class, 'register']);
     Route::post('/login', [ App\Http\Controllers\API\UserController::class, 'login']);
     Route::group(['middleware' => 'auth:api'], function (){
         Route::get('user/logout', 'UserController@logout');
     });
-    
+    Route::group(['middleware' => 'auth:api'], function (){
+    Route::get('user/logout', [ App\Http\Controllers\API\UserController::class, 'logout'])->middleware('auth');
 });
+});*/
 
 
 
