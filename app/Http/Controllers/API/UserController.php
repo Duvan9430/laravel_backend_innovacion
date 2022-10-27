@@ -48,11 +48,11 @@ class UserController extends Controller
         ], 200);
     }
 
-    
+
 
     public function register(Request $request)
-    { 
-  
+    {
+
         try{
         $validator = Validator::make($request->all(), [
             'name' => 'required',
