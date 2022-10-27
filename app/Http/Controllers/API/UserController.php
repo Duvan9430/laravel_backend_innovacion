@@ -79,7 +79,7 @@ class UserController extends Controller
         return $response;
 
         }catch(CustomException $ex){
-            $retorno = CustomException::CrearLogError($ex, 'Error al generar los cambios UserController::setUsuario');
+            $retorno = CustomException::CrearLogError($ex, 'Error al generar los cambios UserController::setUsuarios');
 
         }
     }
