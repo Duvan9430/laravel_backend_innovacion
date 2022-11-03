@@ -16,8 +16,10 @@ class CreateUrlVideosTable extends Migration
         Schema::create('url_videos', function (Blueprint $table) {
             $table->id();
             $table->string('url_videos');
+            $table->unsignedBigInteger('temas_id')->unsigned();
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
+            $table->foreign('temas_id')->references('id')->on('temas');
         });
     }
 
