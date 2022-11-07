@@ -30,6 +30,8 @@ Route::get('users', function(){
 Route::middleware('auth:api')->prefix('profile')->group(function () {
     Route::get('user/logout', [ App\Http\Controllers\API\UserController::class, 'logout'])->middleware('auth');
     Route::get('user/videos/{id}', [ App\Http\Controllers\API\VideosController::class, 'obtenerVideo']);
+    Route::get('user/videosPreguntas/{id}', [ App\Http\Controllers\API\VideosController::class, 'obtenerVideoPreguntas']);
+    Route::get('user/videosPreguntasRespuestas/[{id}]', [ App\Http\Controllers\API\VideosController::class, 'obtenerVideoPreguntasRespuestas']);
 });
 
 /* REFERENCIAS no borrar

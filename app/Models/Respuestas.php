@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
-class Respuestas  extends Model
+class Respuestas extends Model
 {
     use HasFactory;
     use SoftDeletes;
